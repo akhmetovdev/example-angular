@@ -1,0 +1,27 @@
+<div class="columns is-mobile">
+  <div class="column align-center">
+    <button class="button is-primary" (click)="handleClickPreviousMonth()">Previous</button>
+  </div>
+  <div class="column justify-center align-center">
+    <p class="subtitle">{{ currentDateTime.monthLong | uppercase }} {{ currentDateTime.year }}</p>
+  </div>
+  <div class="column align-center">
+    <button class="button is-primary" (click)="handleClickNextMonth()">Next</button>
+  </div>
+</div>
+
+<div class="message is-primary">
+  <div class="message-header">
+    <div class="columns is-mobile">
+      <div class="column align-center" *ngFor="let weekday of weekdays">{{ weekday }}</div>
+    </div>
+  </div>
+  
+  <div class="message-body">
+    <div class="columns is-mobile" *ngFor="let row of rows">
+      <div class="column align-center" *ngFor="let column of row">
+        {{ column }}
+      </div>
+    </div>
+  </div>
+</div>
